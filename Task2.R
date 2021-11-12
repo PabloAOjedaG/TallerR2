@@ -15,3 +15,5 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 #-------- PUNTO 1 ---------
 #--------------------------
 
+chip <- list ()
+
