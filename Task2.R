@@ -17,3 +17,13 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 
 chip <- list ()
 
+
+#listar todos los archivos xls en el directorio actual
+list.archivos(pattern="xls") #argumento para definir i
+
+list.archivos<-list.archivos(pattern="xls") # se crea una lista con los archivos
+
+for (i in 1:length(list.archivos))
+{chip[[i]]<-read_xls(list.archivos[i])}
+# se crea un loop para leer los archivos de excel.
+
