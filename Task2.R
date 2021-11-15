@@ -11,15 +11,6 @@ if(!require(pacman)) install.packages("pacman") ; require(pacman)
 p_load(rio,tidyverse,skimr, qpcR)
 Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 
-#--------------------------
-#-------- PUNTO 1 ---------
-#--------------------------
-
-# Configuraciones iniciales
-rm(list = ls())
-if(!require(pacman)) install.packages("pacman") ; require(pacman)
-p_load(rio,tidyverse,skimr, qpcR, read_xls)
-Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 
 #--------------------------
 #-------- PUNTO 1 ---------
