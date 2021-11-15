@@ -51,22 +51,21 @@ f_extrac = function(i,lista,categoria){
 df = data.frame(pago=NA,codigo_dane=NA,periodo=NA)  
 lista_i = lista[[i]] 
   
-#Extraemos el código, el periodo y el valor del pago
-df$codigo_dane = colnames(lista_i)[1]
+#Extraemos el codigo, el periodo y el valor del pago
+df$codigo_dane = names(lista_i)[1]
   
 df$periodo = lista_i[2,1]
   
-colnames(lista_i) = lista_i[7,]
+names(lista_i) = lista_i[7,]
 df$pago = lista_i %>% subset(NOMBRE==categoria) %>% select(`PAGOS(Pesos)`)
   
   return(df)  
 }
-f_extrac(i = 10 , lista = chip , categoria = "EDUCACIÓN")
+f_extrac(i=10, lista = chip , categoria = "EDUCACIÓN")
 
+#--------------------------
+#-------- PUNTO 3 ---------
+#--------------------------
 
-
-
-
-
-
+lapply(chip, FUN=function(i) f_extrac(i=1,lista=chip,categoria = "EDUCACIÓN"))
 
