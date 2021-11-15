@@ -8,7 +8,7 @@
 # Configuraciones iniciales
 rm(list = ls())
 if(!require(pacman)) install.packages("pacman") ; require(pacman)
-p_load(rio,tidyverse,skimr, qpcR)
+p_load(rio,tidyverse,skimr, qpcR, readxl)
 Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 
 
@@ -19,12 +19,16 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 chip <- list ()
 
 #listar todos los archivos xls en el directorio actual
- #argumento para definir i
-listxls<-dir(pattern="xls")
- # se crea una lista con los archivos
+# argumento para definir k
+listxls <- list.files(pattern="*.xls", recursive = TRUE)
+
+# comando inspirado por la página StackOverflow. Link:
+browseURL("https://stackoverflow.com/questions/32888757/how-can-i-read-multiple-excel-files-into-r")
+
+# se crea una lista con los archivos
 
 # se crea un loop para leer los archivos de excel.
 for (k in 1:length(listxls)){
-  chip[[k]] <- read.csv(listxls[k])
+  chip[[k]] = import(file = listxls[k])
 }
 str(chip[[1]]) 
