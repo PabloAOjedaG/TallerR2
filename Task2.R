@@ -8,7 +8,7 @@
 # Configuraciones iniciales
 rm(list = ls())
 if(!require(pacman)) install.packages("pacman") ; require(pacman)
-p_load(rio,tidyverse,skimr, qpcR, readxl)
+p_load(rio,tidyverse, readxl)
 Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
 
 
@@ -62,3 +62,11 @@ df$pago = lista_i %>% subset(NOMBRE==categoria) %>% select(`PAGOS(Pesos)`)
   return(df)  
 }
 f_extrac(i = 10 , lista = chip , categoria = "EDUCACIÓN")
+
+
+
+
+
+
+
+
