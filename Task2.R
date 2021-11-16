@@ -67,5 +67,6 @@ f_extrac(i=10, lista = chip , categoria = "EDUCACIÓN")
 #-------- PUNTO 3 ---------
 #--------------------------
 
+#Aplicamos la función para los 80 elementos 
 lapply(chip, FUN=function(i) f_extrac(i=1,lista=chip,categoria = "EDUCACIÓN"))
 
